@@ -31,6 +31,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         VentanaPrincipal = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -45,16 +46,32 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        VentanaPrincipal.setBackground(new java.awt.Color(0, 153, 255));
+        VentanaPrincipal.setForeground(new java.awt.Color(255, 0, 0));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pe/edu/unprg/images/descarga (5).png"))); // NOI18N
+
+        VentanaPrincipal.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout VentanaPrincipalLayout = new javax.swing.GroupLayout(VentanaPrincipal);
         VentanaPrincipal.setLayout(VentanaPrincipalLayout);
         VentanaPrincipalLayout.setHorizontalGroup(
             VentanaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 544, Short.MAX_VALUE)
+            .addGroup(VentanaPrincipalLayout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addComponent(jLabel1)
+                .addContainerGap(140, Short.MAX_VALUE))
         );
         VentanaPrincipalLayout.setVerticalGroup(
             VentanaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 322, Short.MAX_VALUE)
+            .addGroup(VentanaPrincipalLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel1)
+                .addContainerGap(113, Short.MAX_VALUE))
         );
+
+        jMenuBar1.setBackground(new java.awt.Color(153, 255, 0));
+        jMenuBar1.setForeground(new java.awt.Color(102, 204, 255));
 
         jMenu1.setText("Inicio");
 
@@ -75,6 +92,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setBackground(new java.awt.Color(51, 51, 255));
         jMenu3.setText("Mantenimientos");
 
         jMenuItem3.setText("Clientes");
@@ -93,6 +111,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem4);
 
+        jMenuItem5.setBackground(new java.awt.Color(0, 255, 0));
         jMenuItem5.setText("Productos");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,7 +161,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        Producto producto = new Producto();
+        ProductoFrame producto = new ProductoFrame();
         centrarVentana(producto);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
@@ -161,6 +180,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane VentanaPrincipal;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
