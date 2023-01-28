@@ -249,6 +249,16 @@ public class VentasJpaController implements Serializable {
             em.close();
         }
     }
+    
+    public Integer findMaxVentas() {
+        EntityManager em = getEntityManager();
+        try {
+            Integer num = (Integer) em.createQuery("SELECT MAX(v.idVentas) FROM Ventas v").getSingleResult();
+            return num;
+        } finally {
+            em.close();
+        }
+    }
 
     public int getVentasCount() {
         EntityManager em = getEntityManager();

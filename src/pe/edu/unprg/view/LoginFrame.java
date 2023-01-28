@@ -97,6 +97,7 @@ public class LoginFrame extends javax.swing.JFrame {
             empleado = ejc.findByDniAndUser(txtUser.getText(), txtPassword.getText());
             if (empleado != null) {
                 dispose();
+                pf.txtIdEmpleado.setText(empleado.getIdEmpleado().toString());
                 pf.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(null, "Empleado no válido", "Advertencia", JOptionPane.WARNING_MESSAGE);

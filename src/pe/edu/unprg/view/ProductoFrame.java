@@ -8,12 +8,12 @@ package pe.edu.unprg.view;
  *
  * @author inova
  */
-public class Producto extends javax.swing.JInternalFrame {
+public class ProductoFrame extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Producto
      */
-    public Producto() {
+    public ProductoFrame() {
         initComponents();
     }
 

@@ -19,6 +19,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     public PrincipalFrame() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+        txtIdEmpleado.setVisible(false);
     }
 
     /**
@@ -31,6 +32,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         VentanaPrincipal = new javax.swing.JDesktopPane();
+        txtIdEmpleado = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -45,15 +47,25 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        txtIdEmpleado.setEditable(false);
+
+        VentanaPrincipal.setLayer(txtIdEmpleado, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout VentanaPrincipalLayout = new javax.swing.GroupLayout(VentanaPrincipal);
         VentanaPrincipal.setLayout(VentanaPrincipalLayout);
         VentanaPrincipalLayout.setHorizontalGroup(
             VentanaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 544, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentanaPrincipalLayout.createSequentialGroup()
+                .addContainerGap(402, Short.MAX_VALUE)
+                .addComponent(txtIdEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
         VentanaPrincipalLayout.setVerticalGroup(
             VentanaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 322, Short.MAX_VALUE)
+            .addGroup(VentanaPrincipalLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(txtIdEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(283, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Inicio");
@@ -127,7 +139,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Ventas ventas = new Ventas();
+        VentasFrame ventas = new VentasFrame();
+        ventas.txtEmpleado.setText(txtIdEmpleado.getText());
         centrarVentana(ventas);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -142,7 +155,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        Producto producto = new Producto();
+        ProductoFrame producto = new ProductoFrame();
         centrarVentana(producto);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
@@ -160,7 +173,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane VentanaPrincipal;
+    public static javax.swing.JDesktopPane VentanaPrincipal;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -172,5 +185,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    public static javax.swing.JTextField txtIdEmpleado;
     // End of variables declaration//GEN-END:variables
 }

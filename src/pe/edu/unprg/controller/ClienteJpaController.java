@@ -191,6 +191,21 @@ public class ClienteJpaController implements Serializable {
             em.close();
         }
     }
+    
+    public Cliente findByDni(String dni) {
+        EntityManager em = getEntityManager();
+        try {
+            List<Cliente> clientes = em.createNamedQuery("Cliente.findByDni", Cliente.class)
+                    .setParameter("dni", dni)
+                    .getResultList();
+            if(clientes.size()>0) {
+                return clientes.get(0);
+            }
+            return null;
+        } finally {
+            em.close();
+        }
+    }
 
     public int getClienteCount() {
         EntityManager em = getEntityManager();
