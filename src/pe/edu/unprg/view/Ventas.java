@@ -4,18 +4,21 @@
  */
 package pe.edu.unprg.view;
 
+import pe.edu.unprg.entity.Cliente;
+
 /**
  *
  * @author inova
  */
 public class Ventas extends javax.swing.JInternalFrame {
-
+public Cliente Cliente = new Cliente();
     /**
      * Creates new form Ventas
      */
     public Ventas() {
         initComponents();
     }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.

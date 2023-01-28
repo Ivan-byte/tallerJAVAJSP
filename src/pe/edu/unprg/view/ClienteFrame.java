@@ -19,6 +19,13 @@ public class ClienteFrame extends javax.swing.JInternalFrame {
     private ClienteJpaController cjc = new ClienteJpaController();
     private DefaultTableModel model;
     private List<Cliente> lista;
+    
+    
+    
+    
+    ///comit
+    
+    
     private Cliente cliente = new Cliente();
     private String accion = "";
 

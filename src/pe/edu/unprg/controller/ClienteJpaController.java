@@ -191,6 +191,7 @@ public class ClienteJpaController implements Serializable {
             em.close();
         }
     }
+ 
 
     public int getClienteCount() {
         EntityManager em = getEntityManager();
